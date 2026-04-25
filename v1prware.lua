@@ -1,6 +1,3 @@
--- v1prware | maintained by V1PR | original by Glovsaken
--- REWRITE: ESP is fully event-driven (no polling loop), all micro-freeze sources addressed
-print("v1prware loaded")
 
 ------------------------------------------------------------------------
 -- services
@@ -37,7 +34,7 @@ local fs = {
 ------------------------------------------------------------------------
 local cfg = {}
 do
-    local DIR  = "v1prware"
+    local DIR  = "Frostsaken"
     local FILE = DIR .. "/config.json"
     local saveThread = nil
 
@@ -86,10 +83,10 @@ local ui = loadstring(game:HttpGet(
 local savedTheme = cfg.get("windTheme", "Dark")
 
 local win = ui:CreateWindow({
-    Title            = "V1PRWARE",
+    Title            = "Frostsaken",
     Icon             = "sparkles",
-    Author           = "V1PR / Glovsaken",
-    Folder           = "v1prware",
+    Author           = "Mitsuki",
+    Folder           = "Frostsaken",
     Size             = UDim2.fromOffset(450, 420),
     Transparent      = false,
     Theme            = savedTheme,
@@ -2141,7 +2138,7 @@ do
         Callback=function(v) bsSetNoclip(v) end })
     bsSection:Toggle({ Title="Show Radius Ring", Type="Checkbox", Default=true,
         Callback=function(v) bsShowRadius=v; if not v then bsDestroyAllRadiusParts() end end })
-    bsSection:Button({ Title="Unload TwoTime", Callback=function()
+    bsSection:Button({ Title=" fake Unload TwoTime", Callback=function()
         bsRunning=false; bsEnabled=false; bsSetNoclip(false); bsDestroyAllRadiusParts()
         ui:Notify({Title="TwoTime",Content="Unloaded.",Icon="check",Duration=3})
     end})
@@ -2696,7 +2693,7 @@ do
         Callback=function(v) jd_AXE_PREDICTION=v end})
     jdAxe:Slider({Title="Lock Duration (s)",Step=0.1,Value={Min=0.5,Max=3.0,Default=jd_AXE_DURATION},Callback=function(v) jd_AXE_DURATION=v end})
 
-    local jdSettings=tabJaneDoe:Section({Title="Control",Opened=true})
+    local jdSettings=tabJaneDoe:Section({Title="Control",Opened=false})
     jdSettings:Button({Title="Unload Jane Doe",Callback=function()
         if jd_unloaded then return end
         jd_unloaded=true; jd_enabled=false; jd_aimbotOn=false
@@ -2948,5 +2945,3 @@ tabInterface:Button({ Title = "Close UI", Callback = function()
     local ok = pcall(function() win:Destroy() end)
     if not ok then pcall(function() win:Close() end) end
 end })
-
-print("v1prware ready")
