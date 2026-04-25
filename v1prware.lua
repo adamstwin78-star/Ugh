@@ -85,7 +85,7 @@ local savedTheme = cfg.get("windTheme", "Dark")
 local win = ui:CreateWindow({
     Title            = "Frostsaken",
     Icon             = "sparkles",
-    Author           = "Mitsuki",
+    Author           = " by Mitsuki, glovdev, thelevelist And v1pr",
     Folder           = "Frostsaken",
     Size             = UDim2.fromOffset(450, 420),
     Transparent      = false,
@@ -100,7 +100,7 @@ win:SetToggleKey(Enum.KeyCode.L)
 ui:SetFont("rbxasset://fonts/families/AccanthisADFStd.json")
 
 win:EditOpenButton({
-    Title           = "V1PRWARE",
+    Title           = "Frostsaken",
     Icon            = "sparkles",
     CornerRadius    = UDim.new(0, 16),
     StrokeThickness = 0,
